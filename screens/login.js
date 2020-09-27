@@ -50,6 +50,7 @@ function Login({navigation}) {
               <Button
                 style={styles.button}
                 title="LOGIN"
+                color="#fff"
                 onPress={() =>
                   form.userName &&
                   form.password &&
@@ -69,12 +70,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginBottom: 150,
+    marginBottom: 120,
   },
   button: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#fff',
   },
   center: {
     flex: 1,

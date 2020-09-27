@@ -19,20 +19,24 @@ function LoginInput(props) {
     Animated.timing(fontSize, {
       toValue: 12,
       duration: 200,
+      useNativeDriver: false,
     }).start();
     Animated.timing(bottom, {
       toValue: 40,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
   const labelMoveBottom = () => {
     Animated.timing(fontSize, {
       toValue: 0,
       duration: 200,
+      useNativeDriver: false,
     }).start();
     Animated.timing(bottom, {
       toValue: 16,
       duration: 200,
+      useNativeDriver: false,
     }).start();
   };
   useEffect(() => {
