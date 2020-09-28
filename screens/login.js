@@ -28,49 +28,47 @@ function Login({navigation}) {
   }, [form]);
   return (
     <KeyboardAvoidingView style={{flex: 1}} behavior={behavior} enabled>
-      <SafeAreaView style={{backgroundColor: '#fff', flex: 1}}>
-        <View style={styles.container}>
-          <ImageBackground
-            source={require('../images/login_bg.png')}
-            style={styles.bgImage}>
-            <View style={styles.main}>
-              <LoginInput
-                name="Username"
-                onChange={(val) => {
-                  onChangeText(val, 'userName');
-                }}
+      <View style={styles.container}>
+        <ImageBackground
+          source={require('../images/login_bg.png')}
+          style={styles.bgImage}>
+          <View style={styles.main}>
+            <LoginInput
+              name="Username"
+              onChange={(val) => {
+                onChangeText(val, 'userName');
+              }}
+            />
+            <LoginInput
+              name="Password"
+              secureTextEntry={true}
+              onChange={(val) => {
+                onChangeText(val, 'password');
+              }}
+            />
+            <ImageBackground
+              source={require('../images/button_bg.png')}
+              style={[
+                styles.btnImage,
+                {
+                  marginTop: 30,
+                  opacity: form.userName && form.password ? 1 : 0.5,
+                },
+              ]}>
+              <Button
+                style={styles.button}
+                title="LOGIN"
+                color="#fff"
+                onPress={() =>
+                  form.userName &&
+                  form.password &&
+                  navigation.navigate('Detail')
+                }
               />
-              <LoginInput
-                name="Password"
-                secureTextEntry={true}
-                onChange={(val) => {
-                  onChangeText(val, 'password');
-                }}
-              />
-              <ImageBackground
-                source={require('../images/button_bg.png')}
-                style={[
-                  styles.btnImage,
-                  {
-                    marginTop: 30,
-                    opacity: form.userName && form.password ? 1 : 0.5,
-                  },
-                ]}>
-                <Button
-                  style={styles.button}
-                  title="LOGIN"
-                  color="#fff"
-                  onPress={() =>
-                    form.userName &&
-                    form.password &&
-                    navigation.navigate('Detail')
-                  }
-                />
-              </ImageBackground>
-            </View>
-          </ImageBackground>
-        </View>
-      </SafeAreaView>
+            </ImageBackground>
+          </View>
+        </ImageBackground>
+      </View>
     </KeyboardAvoidingView>
   );
 }
