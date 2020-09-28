@@ -56,18 +56,16 @@ function Login({navigation}) {
                     opacity: form.userName && form.password ? 1 : 0.5,
                   },
                 ]}>
-                <View style={styles.button}>
-                  <Button
-                    style={styles.button}
-                    title="LOGIN"
-                    color="#fff"
-                    onPress={() =>
-                      form.userName &&
-                      form.password &&
-                      navigation.navigate('Detail')
-                    }
-                  />
-                </View>
+                <Button
+                  style={styles.button}
+                  title="LOGIN"
+                  color="#fff"
+                  onPress={() =>
+                    form.userName &&
+                    form.password &&
+                    navigation.navigate('Detail')
+                  }
+                />
               </ImageBackground>
             </View>
           </ImageBackground>

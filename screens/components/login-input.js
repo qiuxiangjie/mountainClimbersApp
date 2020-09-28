@@ -48,16 +48,6 @@ function LoginInput(props) {
   }, [form]);
   return (
     <View style={styles.inputItme}>
-      <Animated.Text
-        style={[
-          styles.inputLabel,
-          {
-            fontSize: fontSize,
-            bottom: bottom,
-          },
-        ]}>
-        {props.name}
-      </Animated.Text>
       <TextInput
         style={[
           styles.input,
@@ -71,6 +61,17 @@ function LoginInput(props) {
         value={form.val}
         {...props}
       />
+      <Animated.Text
+        pointerEvents={'none'}
+        style={[
+          styles.inputLabel,
+          {
+            fontSize: fontSize,
+            bottom: bottom,
+          },
+        ]}>
+        {props.name}
+      </Animated.Text>
     </View>
   );
 }
@@ -88,13 +89,14 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 16,
-    height: 30,
+    height: 40,
     width: '100%',
     color: '#fff',
     borderColor: '#7B7B7B',
     borderWidth: 0,
     borderBottomWidth: 1,
     marginTop: 30,
+    padding: 0,
   },
 });
 
