@@ -29,7 +29,7 @@ function LoginInput(props) {
   };
   const labelMoveBottom = () => {
     Animated.timing(fontSize, {
-      toValue: 0,
+      toValue: 16,
       duration: 200,
       useNativeDriver: false,
     }).start();

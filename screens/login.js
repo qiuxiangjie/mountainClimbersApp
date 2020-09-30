@@ -6,11 +6,13 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import LoginInput from './components/login-input';
 
 function Login({navigation}) {
-  let behavior = Platform.OS == 'ios' ? 'padding' : null;
+  let behavior = Platform.OS === 'ios' ? 'padding' : null;
+
   const [form, onChangeForm] = useState({
     userName: '',
     password: '',
@@ -23,9 +25,7 @@ function Login({navigation}) {
     });
   };
 
-  useEffect(() => {
-    console.log(111, form);
-  }, [form]);
+  useEffect(() => {}, [form]);
   return (
     <KeyboardAvoidingView style={{flex: 1}} behavior={behavior} enabled>
       <View style={styles.container}>
